@@ -1,0 +1,29 @@
+upgrade to the lastest version of git
+----------------------------------------
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+
+to check git version :-  git --version
+========================================
+
+To execute scripts in linux
+----------------------------
+make a folder with any name and add path to bashrc file
+
+created a folder with name bin in home path
+
+export PATH=$PATH:~/home/prasanna/bin/
+
+create a file with any name no extention
+test
+
+change permissions 
+
+chmod +x finename
+write some script it test file
+
+and execute file name like a command
+
+
+
