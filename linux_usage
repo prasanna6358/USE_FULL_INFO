@@ -63,4 +63,14 @@ check the status of Docker:
 command7:sudo systemctl status docker
 
 
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+
+    sudo usermod -aG docker ${USER}
+
+To apply the new group membership, you can log out of the server and back in, or you can type the following:
+
+    su - ${USER}
+then type password no need to use sudo after this.
+
+
 
