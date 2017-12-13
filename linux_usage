@@ -81,3 +81,40 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 https://www.howtoforge.com/tutorial/kvm-on-ubuntu-14.04/ to install KVM on linux ubuntu
 
+
+to install virtual 
+===============================================
+Step 1 – Setup Apt Repository
+
+Firstly edit /etc/apt/sources.list file and add one of the following lines according to your distribution to your system. You can find your system distribution codename using “lsb_release -c” command from a terminal.
+
+For Ubuntu 17.04 ("Zesty")
+deb http://download.virtualbox.org/virtualbox/debian zesty contrib
+
+For Ubuntu 16.04 ("Xenial")
+deb http://download.virtualbox.org/virtualbox/debian xenial contrib
+
+For Ubuntu 14.04 ("Trusty")
+deb http://download.virtualbox.org/virtualbox/debian trusty contrib
+
+For Debian 9 ("Stretch")
+deb http://download.virtualbox.org/virtualbox/debian stretch contrib
+
+For Debian 8 ("Jessie") 
+deb http://download.virtualbox.org/virtualbox/debian jessie contrib
+
+Step 2 – Import VirtualBox Package Sign Key
+
+After adding the required apt repository on your system, download and import the Oracle public key for apt-secure using following commands.
+
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+Step 3 – Install Oracle VirtualBox
+
+After completing above steps, let’s install VirtualBox using following commands. If you have already installed any older version of VirtualBox, Below command will update it automatically.
+
+sudo apt-get update
+sudo apt-get install virtualbox-5.2
+
+
