@@ -39,7 +39,7 @@ public class MongoTest {
                 "admin123".toCharArray()
         );
         MongoClient mongoClient = new MongoClient(new ServerAddress("localhost"),
-                Collections.singletonList(credential), MongoClientOptions.builder().sslEnabled(true).socketFactory(getNoopSslSocketFactory()).build());
+                Collections.singletonList(credential), MongoClientOptions.builder().sslEnabled(true).build());
         mongoClient.getDatabase("mule").listCollections();
     }
 }
