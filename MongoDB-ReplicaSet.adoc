@@ -1,22 +1,22 @@
 = MongoDB ReplicaSet setup
 
 First install the mongoDB from the follwoing below URL:
-https://hevodata.com/blog/install-mongodb-on-ubuntu/[_INSTALL MONGODB on Linux]
+https://hevodata.com/blog/install-mongodb-on-ubuntu/[INSTALL MONGODB on Linux]
 
-Don't give any permissions to any folder just install MongoDB and start mongo shell with "mongo" command
+Don't give any permissions to any folder just install MongoDB and start mongo shell with **mongo** command
 
 Then "use admin" database and create a user in admin database. Use the following command to create user.
 
-db.createUser({user:"admin", pwd:"password", roles:[{role:"root", db:"admin"}]});
+**db.createUser({user:"admin", pwd:"password", roles:[{role:"root", db:"admin"}]});**
 then exit from mongo shell.
 
 == Create RelicaSets for MongoDB
 
 * Will create three replicaSets for MongoDB
 
-**First create a folder  structure like Mongo==> MongoRS1 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
-                                             ==> MongoRS2 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
-                                             ==> MongoRS3 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
+**First create a folder  structure like **Mongo==> MongoRS1 ==>mongodb**  and change the folder permissions using command **sudo chmod 777 mongodb**
+                                             **==> MongoRS2 ==>mongodb**  and change the folder permissions using command **sudo chmod 777 mongodb**
+                                             **==> MongoRS3 ==>mongodb**  and change the folder permissions using command **udo chmod 777 mongodb**
 
 * Edit the file present in /etc/mongod.conf
 
