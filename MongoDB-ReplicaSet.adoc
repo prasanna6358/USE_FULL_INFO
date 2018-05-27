@@ -37,7 +37,7 @@ replication:
 
 *** **sudo mongod --dbpath Mongo/MongoRS2/mongodb --port 27018 --replSet "replsetName"**
 *** Start mongo shell with this port and host like below
-*** Now execute the command to get synshronised with primary database **rs.slaveOk()**
 **** **mongo --host 127.0.0.1 --port 27018**
+*** Now execute the command to get synshronised with primary database **rs.slaveOk()**
 *** Do the same for another port and database port 27019, DB:- Mongo/MongoRS3/mongodb 
 
