@@ -14,7 +14,7 @@ then exit from mongo shell.
 
 * Will create three replicaSets for MongoDB
 
-**First create a folder  structure like **Mongo==> MongoRS1 ==>mongodb**  and change the folder permissions using command **sudo chmod 777 mongodb**
+** First create a folder  structure like **Mongo==> MongoRS1 ==>mongodb**  and change the folder permissions using command **sudo chmod 777 mongodb**
                                              **==> MongoRS2 ==>mongodb**  and change the folder permissions using command **sudo chmod 777 mongodb**
                                              **==> MongoRS3 ==>mongodb**  and change the folder permissions using command **udo chmod 777 mongodb**
 
@@ -27,8 +27,17 @@ replication:
 
 * Now start mongod server with **replicaSet** from the command prompt by the following command.
 
-*** sudo mongod --dbpath /Mongo/MongoRS1/mongodb --port 27017 --replSet "replsetName"
+*** **sudo mongod --dbpath Mongo/MongoRS1/mongodb --port 27017 --replSet "replsetName"**
 
 *** Now in another tab eecute mongo command with the following command **mongo --host 127.0.0.1 --port 27017**
 
 *** Now it will start mongo shell then issue the following command "rs.initiate()" then this will act like "PRIMARY replicaSet"
+
+== Now start another Mongod server with different port and database from another terminal with the follwoing command.
+
+*** **sudo mongod --dbpath Mongo/MongoRS2/mongodb --port 27018 --replSet "replsetName"**
+*** Start mongo shell with this port and host like below
+*** Now execute the command to get synshronised with primary database **rs.slaveOk()**
+**** **mongo --host 127.0.0.1 --port 27018**
+*** Do the same for another port and database port 27019, DB:- Mongo/MongoRS3/mongodb 
+
