@@ -1,0 +1,34 @@
+= MongoDB ReplicaSet setup
+
+First install the mongoDB from the follwoing below URL:
+https://hevodata.com/blog/install-mongodb-on-ubuntu/[_INSTALL MONGODB on Linux]
+
+Don't give any permissions to any folder just install MongoDB and start mongo shell with "mongo" command
+
+Then "use admin" database and create a user in admin database. Use the following command to create user.
+
+db.createUser({user:"admin", pwd:"password", roles:[{role:"root", db:"admin"}]});
+then exit from mongo shell.
+
+== Create RelicaSets for MongoDB
+
+* Will create three replicaSets for MongoDB
+
+**First create a folder  structure like Mongo==> MongoRS1 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
+                                             ==> MongoRS2 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
+                                             ==> MongoRS3 ==>mongodb  and change the folder permissions using command "sudo chmod 777 mongodb"
+
+* Edit the file present in /etc/mongod.conf
+
+** Just paste the following content in the mongod.conf
+
+replication:
+  replSetName: replicaSetName
+
+* Now start mongod server with **replicaSet** from the command prompt by the following command.
+
+*** sudo mongod --dbpath /Mongo/MongoRS1/mongodb --port 27017 --replSet "replsetName"
+
+*** Now in another tab eecute mongo command with the following command **mongo --host 127.0.0.1 --port 27017**
+
+*** Now it will start mongo shell then issue the following command "rs.initiate()" then this will act like "PRIMARY replicaSet"
