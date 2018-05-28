@@ -21,6 +21,9 @@ then exit from mongo shell.
 * Edit the file present in /etc/mongod.conf
 
 ** Just paste the following content in the mongod.conf
+net:
+  port: 27017
+  bindIp: 127.0.0.1
 
 replication:
   replSetName: replicaSetName
