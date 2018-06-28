@@ -47,5 +47,16 @@ public static void main(){
         return employees.stream().filter(predicate).collect(Collectors.toList());
     }
         
+
+  public static void getNum() {
+        List<Integer> myList = new ArrayList<>();
+        for(int i = 0; i<100;i++)myList.add(i);
+        //filter numbers greater than 90
+        myList = myList.stream().filter(p->p>90).collect(Collectors.toList());
+
+        System.out.println(myList);
+        List<String> list = Stream.of("abc","def","ghi","kjl").map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(list);
+    }
         
         
