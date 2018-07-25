@@ -1,3 +1,4 @@
+
 public class App {
 
     public static void main(String[] args) {
@@ -20,5 +21,31 @@ public class App {
         for (int k=0;k<arr.length;k++){
             System.out.println(arr[k]);
         }
+
+        System.out.println("after sorting binary search");
+        for(int l=0;l<arr.length;l++){
+            System.out.print(arr[l]+" ");
+        }
+        System.out.println();
+        System.out.println("enter the no you want to search");
+        Scanner scanner = new Scanner(System.in);
+        int no = scanner.nextInt();
+        int start = 0;
+        int end = arr.length-1;
+        System.out.println("find value at position "+binarySearch(arr,start,end,no));
+
     }
- }
+
+    public static int binarySearch(int arr[],int start, int end, int no ){
+        int mid = start+(end-start)/2;
+        if(arr[mid]==no){
+            return mid;
+        }
+        if(arr[mid]>no){
+            return binarySearch(arr,start,mid-1,no);
+        }
+        if(arr[mid]<no) {
+            return binarySearch(arr, mid + 1, end, no);
+        }
+        return -1;
+    }
