@@ -1,23 +1,21 @@
 var Mouse = /** @class */ (function () {
-    function Mouse(a, y) {
-        this.a = a;
-        this.y = y;
-        this.a = a;
-        this.y = y;
+    function Mouse(_x, _y) {
+        this._x = _x;
+        this._y = _y;
     }
     Mouse.prototype.addElements = function () {
-        console.log("X is " + this.a + " Y is " + this.y + " sum is " + (this.a + this.y));
+        console.log("X is " + this._x + " Y is " + this._y + " sum is " + (this.x + this._y));
     };
-    Object.defineProperty(Mouse.prototype, "X", {
+    Object.defineProperty(Mouse.prototype, "x", {
         get: function () {
-            return this.a;
+            return this._x;
         },
         set: function (value) {
             if (value < 0) {
                 throw new Error("value cannot be less than Zero");
             }
             else
-                this.a = value;
+                this._x = value;
         },
         enumerable: true,
         configurable: true
@@ -25,7 +23,8 @@ var Mouse = /** @class */ (function () {
     return Mouse;
 }());
 var obj = new Mouse(2, 5);
-obj.X = -5;
-var d = obj.X;
+obj.addElements();
+obj.x = 10;
+var d = obj.x;
 console.log(d);
 obj.addElements();

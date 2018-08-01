@@ -1,28 +1,27 @@
 
 class Mouse{
 
-    constructor(private a?: number, private y?: number){
-       this.a = a;
-       this.y = y;
+    constructor(private _x?: number, private _y?: number){
     }
 
     addElements(){
-        console.log("X is "+this.a +" Y is "+this.y+" sum is "+(this.a+this.y));
+        console.log("X is "+this._x +" Y is "+this._y+" sum is "+(this.x+this._y));
     }
 
-    get X(){
-        return this.a;
+    get x(){
+        return this._x;
     }
-    set X(value){
+    set x(value){
         if(value<0){
             throw new Error("value cannot be less than Zero");
         }
-        else this.a = value;
+        else this._x = value;
     }
 }
 
 let obj = new Mouse(2,5);
-obj.X =-5;
-var d = obj.X;
+obj.addElements();
+obj.x =10;
+var d = obj.x;
 console.log(d);
 obj.addElements();
