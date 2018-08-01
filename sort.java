@@ -7,6 +7,7 @@ public class App {
         sortNumbers(arr);
     }
 
+//sorting the numbers in java, it will not eliminate the duplicates elements.
     public static void sortNumbers(int arr[]){
         int temp = 0;
         for(int i=0;i<arr.length;i++) {
