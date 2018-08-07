@@ -10,6 +10,31 @@ public class MinMaxNumber {
         System.out.println(" isConsecutive numbers "+consecutiveORnot( arr));
         getMinMaxNumbers(arr);
     }
+    
+        private static int largestno=0;
+    private static int actualNo=0;
+    public static void getNumber(int no){
+        actualNo=no;
+        while (!checkNo(no)){
+            no=no-1;
+        }
+        System.out.println(largestno);
+    }
+
+    public static boolean checkNo(int no){
+        largestno = no-1;
+        char[] char1 = String.valueOf(actualNo).toCharArray();
+        char[] char2 = String.valueOf(largestno).toCharArray();
+
+        for(int i=0;i<char1.length;i++){
+            for(int j=0;j<char2.length;j++){
+                if(char1[i]==char2[j]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     public static void getMinMaxNumbers(int[] arr) {
         int min = arr[0];
