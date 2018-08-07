@@ -11,7 +11,7 @@ public class MinMaxNumber {
         getMinMaxNumbers(arr);
     }
     
-        private static int largestno=0;
+    private static int largestno=0;
     private static int actualNo=0;
     public static void getNumber(int no){
         actualNo=no;
