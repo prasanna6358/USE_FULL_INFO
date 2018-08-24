@@ -1,0 +1,38 @@
+## For Quicksart Python follow the below points 
+
+First install Python latest stable version
+
+Then install pip
+
+Then install virtual environment wrapper
+
+''pip install virtualenvwrapper''
+
+Then update path in bashrc file by typing the command we will get 
+command is 
+which virtualenvwrapper.sh
+/usr/local/bin/virtualenvwrapper.sh
+
+update the above path in bashrc file
+
+
+install Django
+
+pip install Django==1.11
+
+create Django project by typing the below command.
+
+django-admin startproject billa
+
+cd billa
+
+then createapp in that directory by typing the below command
+
+python manage.py startapp Auth
+
+then migrate to create defaults tables in sqlLite database.
+
+then create a super user
+python manage.py createsuperuser
+
+
