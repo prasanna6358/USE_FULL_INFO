@@ -1,0 +1,17 @@
+public class MongoQuery{
+
+	public Employee findByEmpNo(Integer empNo) {
+				
+		return this.mongoTemplate.findById(empNo, Employee.class);
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		this.mongoTemplate.remove(query(where("id").is(id)), Employee.class);
+	}
+
+	@Override
+	public List<Employee> findByNameorEmailLike(String nameorrEmail) {
+		return this.mongoTemplate.find(query(where("id").is(nameorrEmail).orOperator(Criteria.where("email").is(nameorrEmail))), Employee.class);
+    }
+ }   
